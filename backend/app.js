@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 
 const app = express();      // Création de l'application express
 
-//app.use(helmet());      // Mise en place d'un header sécurisé pour luter contre les failles XSS
+app.use(helmet());      // Mise en place d'un header sécurisé pour luter contre les failles XSS
 
 app.use((req, res, next) => {       // middleware général appliqué à toute les requêtes (CORS)
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');      // autorisation d'acceder à notre API
